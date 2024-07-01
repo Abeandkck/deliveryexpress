@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo h1 {
+    margin: 0;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.menu li {
+    margin-right: 20px;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.actives {
+    font-weight: bold;
+}
+
+.fa-user, .fa-cart-shopping {
+    color: #fff;
+    font-size: 1.5em;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.toggle-btn {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#basket {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    z-index: 999;
+}
+
+#basket.active {
+    display: block;
+}
+
+.flex-colum-centre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flex-start {
+    justify-content: flex-start;
+}
+
+.size80 {
+    font-size: 80%;
+}
+
+#bloctitrepanier {
+    margin-bottom: 20px;
+}
+
+#bloctitrepanier h2 {
+    margin: 0;
+}
+
+#basket-fiche {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#bloctmage img {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+#blocProduit {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.bouton-moins, .bouton-plus {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.produit-quantite {
+    margin: 0 10px;
+}
+

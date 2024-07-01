@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="jsk.css">
+    <link href="https://fonts.google.com/selection/embed">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Delivery express</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><h1>Delivery express</h1></div>
+        <ul class="menu">
+            <li><a href="#" class="actives">Accueil</a></li>
+            <li><a href="#"class="fa-regular fa-user"></a></li>
+            <li><a href="panier.html" class="fa-solid fa-cart-shopping"></a></li>
+            <li><a href="#" class="toggle-btn">magasin</a></li>
+            <li>
+              <div class="search-container">
+                  <input type="text" class="search-bar" id="search-bar" placeholder="Rechercher...">
+                  <button class="search-btn" id="search-btn">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+              </div>
+          </li>
+              <div class="dropdown-content">
+                <div class="contents">
+                    <div class="stores">
+                        <div class="store">
+                            <img src="zenith.jfif" alt="Zenith">
+                        </div>
+                        <div class="store">
+                            <img src="hp.jfif" alt=" HP">
+                        </div>
+                        <div class="store">
+                            <img src="mMaison.jpg" alt=" Ma Maison Marchine">
+                        </div>
+                        <div class="store">
+                            <img src="uac.jpg" alt="UAC">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fin de l'insertion -->
+        </ul>
+    </nav>
+    <section class="content">
+        <h1>nouveautés</h1>
+        <p>consultez nos produits  </p>
+        <button>DECOUVRIR</button>
+    </section>
+
+    <h1 class="produits_tx">nos produits</h1>
+    <section class="section_produits">
+        <div class="produits">
+           <div class="carte">
+                <div class="img"><img src="image0.jpeg"></div>
+                <div class="desc">desktop dell</div>
+                <div class="titre"> portable computer </div>
+                <div class="box">
+                    <div class="prix">40$</div>
+                    <button class="achat" onclick="ajouterAuPanier('Desktop Dell', '40')">ajouter</button>
+                </div>
+           </div> 
+           
+           <div class="carte">
+            <div class="img"><img src="2.jpg"></div>
+            <div class="desc">pc gaming</div>
+            <div class="titre"> pc gaming 32go ram 1terra ssd</div>
+            <div class="box">
+                <div class="prix">40$</div>
+                <button class="achat" onclick="ajouterAuPanier('pc gaming 32go ram 1terra ssd', '40')">ajouter</button>
+            </div>
+       </div> <div class="carte">
+        <div class="img"><img src="image4.jpeg"></div>
+        <div class="desc">disque dur</div>
+        <div class="titre"> disque dur ssd 100-1000go</div>
+        <div class="box">
+            <div class="prix">40$</div>
+            <button class="achat" onclick="ajouterAuPanier('disque dur ssd 100-1000go', '40')">ajouter</button>
+        </div>
+   </div> <div class="carte">
+    <div class="img"><img src="image6.jpeg"></div>
+    <div class="desc">sonny ps5</div>
+    <div class="titre">  play station </div>
+    <div class="box">
+        <div class="prix">40$</div>
+        <button class="achat" onclick="ajouterAuPanier('sonny ps5', '40')">ajouter</button>
+    </div>
+</div> <div class="carte">
+    <div class="img"><img src="3.jpg"></div>
+    <div class="desc">pc gaming</div>
+    <div class="titre"> pc gaming 16go ram 1terra ssd</div>
+    <div class="box">
+        <div class="prix">50$</div>
+        <button class="achat" onclick="ajouterAuPanier('pc gaming 16go ram 1terra ssd', '40')">ajouter</button>
+    </div>
+</div> <div class="carte">
+    <div class="img"><img src="4.jpg"></div>
+    <div class="desc">pc gaming</div>
+    <div class="titre"> pc gaming</div>
+    <div class="box">
+        <div class="prix">50$</div>
+        <button class="achat" onclick="ajouterAuPanier('pc gaming', '40')">ajouter</button>
+    </div>
+</div><div class="carte">
+    <div class="img"><img src="5.jpg"></div>
+    <div class="desc">assus gaming</div>
+    <div class="titre"> portable computer</div>
+    <div class="box">
+        <div class="prix">50$</div>
+        <button class="achat" onclick="ajouterAuPanier('assus gaming', '40')">ajouter</button>
+    </div>
+</div><div class="carte">
+    <div class="img"><img src="6.jpg"></div>
+    <div class="desc">mouse and keybord</div>
+    <div class="titre"> mouseand keybord</div>
+    <div class="box">
+        <div class="prix">50$</div>
+        <button class="achat" onclick="ajouterAuPanier('mouse and keybord', '40')">ajouter</button>
+    </div>
+</div><div class="carte">
+    <div class="img"><img src="7.jpg"></div>
+    <div class="desc">amoled 4k 15 inch</div>
+    <div class="titre"> monitor </div>
+    <div class="box">
+        <div class="prix">50$</div>
+        <button class="achat" onclick="ajouterAuPanier('amoled 4k 15 inch', '40')">ajouter</button>
+    </div>
+</div><div class="carte">
+    <div class="img"><img src="8.jpg"></div>
+    <div class="desc">pc gaming</div>
+    <div class="titre"> pc gaming</div>
+    <div class="box">
+        <div class="prix">50$</div>
+        <button class="achat" onclick="ajouterAuPanier('pc gaming', '40')">ajouter</button>
+    </div>
+</div><div class="carte">
+    <div class="img"><img src="9.jpg"></div>
+    <div class="desc">graphical bord</div>
+    <div class="titre"> carte graphiquer</div>
+    <div class="box">
+        <div class="prix">50$</div>
+        <button class="achat" onclick="ajouterAuPanier('graphical bord', '40')">ajouter</button>
+    </div>
+</div><div class="carte">
+    <div class="img"><img src="IMG-20240423-WA0011.jpg"></div>
+    <div class="desc">mac book</div>
+    <div class="titre"> portable computer</div>
+    <div class="box">
+        <div class="prix">50$</div>
+        <button class="achat" onclick="ajouterAuPanier('mac book', '40')">ajouter</button>
+    </div>
+</div><div class="carte">
+    <div class="img"><img src="IMG-20240423-WA0012.jpg"></div>
+    <div class="desc">imprimante</div>
+    <div class="titre"> printf</div>
+    <div class="box">
+        <div class="prix">50$</div>
+        <button class="achat" onclick="ajouterAuPanier('imprimante', '40')">ajouter</button>
+    </div>
+</div><div class="carte">
+    <div class="img"><img src="IMG-20240423-WA0014.jpg"></div>
+    <div class="desc">big pack screen keybord mouse...</div>
+    <div class="titre"> home computer</div>
+    <div class="box">
+        <div class="prix">50$</div>
+        <button class="achat" onclick="ajouterAuPanier('big pack screen keybord mouse', '40')">ajouter</button>
+    </div>
+</div><div class="carte">
+    <div class="img"><img src="image4.jpeg"></div>
+    <div class="desc">desktop dell</div>
+    <div class="titre"> portable computer</div>
+    <div class="box">
+        <div class="prix">50$</div>
+        <button class="achat" onclick="ajouterAuPanier('desktop dell', '40')">ajouter</button>
+    </div>
+</div>
+        
+    </section>
+    <h2 class="produits_tx">les bons prix</h2>
+    <div id="wrapper">
+        <div id="carousel">
+          <div id="content">
+            <img
+              class="item"
+              src="4.jpg"
+            />
+            <img
+              src="5.jpg"
+              class="item"
+            />
+            <img
+              src="2.jpg"
+              class="item"
+            />
+            <img
+              src="3.jpg"
+              class="item"
+            />
+            <img
+              src="6.jpg"
+              class="item"
+            />
+            <img
+              src="7.jpg"
+              class="item"
+            />
+            <img
+              src="9.jpg"
+              class="item"
+            />
+            <img
+              src="image0.jpeg"
+              class="item"
+            />
+            <img
+              src="12.jpeg"
+              class="item"
+            />
+            <img
+              src="image6.jpeg"
+              class="item"
+            />
+            <img
+              class="item"
+              src="image4.jpeg"
+            />
+            <img
+              src="8.jpg"
+              class="item"
+            />
+            <img
+              src="4.jpg"
+              class="item"
+            />
+            <img
+              src="5.jpg"
+              class="item"
+            />
+            <img
+              src="2.jpg"
+              class="item"
+            />
+            <img
+              src="12.jpeg"
+              class="item"
+            />
+            <img
+              src="7.jpg"
+              class="item"
+            />
+            <img
+              src="9.jpg"
+              class="item"
+            />
+            <img
+              src="image6.jpeg"
+              class="item"
+            />
+            <img
+              src="image4.jpeg"
+              class="item"
+            />
+          </div>
+        </div>
+        <button id="prev">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path fill="none" d="M0 0h24v24H0V0z" />
+            <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
+          </svg>
+        </button>
+        <button id="next">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path fill="none" d="M0 0h24v24H0V0z" />
+            <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
+          </svg>
+        </button>
+      </div>
+      <br>
+        
+    <footer>
+        <p><a href="#">copyrights 2024 © delivery express. Tous droits réservés.</a></p>
+    </footer>
+    <script src="script.js"> </script>
+    <script>
+        function ajouterAuPanier(nomProduit, prixProduit) {
+            // Récupérer le panier du stockage local ou initialiser un nouveau panier vide
+            var panier = JSON.parse(localStorage.getItem('panier')) || [];
+            
+            // Ajouter le nouvel article au panier
+            var nouvelArticle = { nom: nomProduit, prix: prixProduit };
+            panier.push(nouvelArticle);
+
+            // Mettre à jour le panier dans le stockage local
+            localStorage.setItem('panier', JSON.stringify(panier));
+
+            // Informer l'utilisateur que l'article a été ajouté au panier (facultatif)
+            alert('L\'article a été ajouté au panier.');
+
+            // Rediriger vers la page du panier
+            window.location.href = 'panier.html';
+        }
+    </script>
+</body>
+</html>

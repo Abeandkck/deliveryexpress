@@ -1,0 +1,337 @@
+:root {
+    --main-bg-color: rgb(22, 44, 87);
+    --main-text-color: antiquewhite;
+    --highlight-color: rgb(22, 9, 170);
+    --button-padding: 15px 30px;
+}
+
+/* Réinitialisation */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Structure de base */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+}
+   
+/* Barre de navigation */
+.navbar {
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: var(--main-bg-color);
+}
+
+.navbar .logo h1 {
+    color: var(--main-text-color);
+    cursor: pointer;
+}
+
+.navbar .menu {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .menu li {
+    margin-left: 20px;
+}
+
+.navbar .menu .search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .menu .search-bar {
+    width: 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: width 0.4s ease-in-out;
+    opacity: 0;
+}
+
+.navbar .menu .search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 10px;
+    font-size: 24px;
+    color: var(--main-text-color);
+}
+
+.navbar .menu .search-bar.active {
+    width: 200px;
+    opacity: 1;
+}
+
+.navbar .menu li a {
+    color: var(--main-text-color);
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 4px solid transparent;
+    transition: border-bottom 0.3s ease, transform 0.3s ease;
+}
+
+.navbar .menu li a:hover,
+.navbar .menu li a.actives {
+    border-bottom-color: antiquewhite;
+    transform: scale(1.05);
+}
+
+/* Contenu principal */
+.content {
+    background-image: url(9.jpg);
+    background-size: 65%;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: rgb(0, 0, 0);
+    height: 80vh;
+    margin: auto;
+}
+
+.content h1 {
+    font-size: 2.5rem;
+}
+
+.content p {
+    font-size: 1.25rem;
+    margin-top: 20px;
+}
+
+.content button {
+    margin-top: 30px;
+    padding: var(--button-padding);
+    border: none;
+    background: var(--highlight-color);
+    color: aliceblue;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.content button:hover {
+    background: #d2313f;
+    transform: scale(1.05);
+}
+
+/* Produits */
+.produits_tx {
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-top: 30px;
+    margin-left: 80px;
+    color: rgba(0, 0, 0, 0.685);
+}
+
+.section_produits {
+    padding: 40px 5%;
+}
+
+.produits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.produits .carte {
+    background: azure;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.produits .carte img {
+    height: 200px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.produits .carte:hover {
+    transform: translateY(-5px);
+}
+
+.produits .carte .desc {
+    padding: 10px 20px;
+    opacity: 0.8;
+}
+
+.produits .carte .titre {
+    font-weight: 900;
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.produits .carte .box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.produits .carte .prix {
+    color: rgb(29, 30, 30);
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+.produits .carte .achat {
+    font-size: 0.75rem;
+    font-weight: 900;
+    color: rgb(61, 104, 87);
+    padding: 8px 14px;
+    border-radius: 5px;
+}
+
+.produits .carte .achat:hover {
+    cursor: pointer;
+    background: black;
+    color: aliceblue;
+}
+
+/* Footer */
+footer {
+    background: var(--main-bg-color);
+    height: 10vh;
+}
+
+footer p {
+    text-align: center;
+    line-height: 10vh;
+}
+
+footer p a {
+    text-decoration: none;
+    color: var(--main-text-color);
+    font-weight: bold;
+}
+
+/* Styles pour la page coulissante */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    min-width: 130px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 20px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #000;
+    background: transparent;
+    border: none;
+}
+
+.stores {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.store img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.store p {
+    margin: 0;
+}
+
+/* Carousel */
+#wrapper {
+    width: 100%;
+    max-width: 964px;
+    position: relative;
+    margin: auto;
+}
+
+#carousel {
+    overflow: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+#carousel::-webkit-scrollbar {
+    height: 0;
+}
+
+#prev,
+#next {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background: white;
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    outline: 0;
+    cursor: pointer;
+    position: absolute;
+}
+
+#prev {
+    top: 50%;
+    left: 0;
+    transform: translate(50%, -50%);
+    display: none;
+}
+
+#next {
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+}
+
+#content {
+    display: grid;
+    grid-gap: 16px;
+    grid-auto-flow: column;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.item {
+    width: 180px;
+    height: 180px;
+    background: green;
+}
+/* Stylisation de la liste du panier */
+#liste-panier {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Stylisation des éléments du panier */
+#liste-panier li {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}

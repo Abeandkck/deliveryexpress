@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="jsk.css">
+    <link href="https://fonts.google.com/selection/embed">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Panier</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><h1>Delivery express</h1></div>
+        <ul class="menu">
+            <li><a href="#" class="actives">Accueil</a></li>
+            <li><a href="#"class="fa-regular fa-user"></a></li>
+            <li><a href="panier.html" class="fa-solid fa-cart-shopping"></a></li>
+            <li><a href="#" class="toggle-btn">magasin</a></li>
+            <li>
+              <div class="search-container">
+                  <input type="text" class="search-bar" id="search-bar" placeholder="Rechercher...">
+                  <button class="search-btn" id="search-btn">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+              </div>
+          </li>
+              <div class="dropdown-content">
+                <div class="contents">
+                    <div class="stores">
+                        <div class="store">
+                            <img src="zenith.jfif" alt="Zenith">
+                        </div>
+                        <div class="store">
+                            <img src="hp.jfif" alt=" HP">
+                        </div>
+                        <div class="store">
+                            <img src="mMaison.jpg" alt=" Ma Maison Marchine">
+                        </div>
+                        <div class="store">
+                            <img src="uac.jpg" alt="UAC">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fin de l'insertion -->
+        </ul>
+    </nav>
+    <div id="panier">
+        <h2>Panier</h2>
+        <ul id="liste-panier">
+            <!-- Les éléments du panier seront ajoutés ici -->
+        </ul>
+        <p id="total-panier">Total: 0$</p>
+         <!-- Ajoutez un espace réservé pour afficher le code QR -->
+         <div id="qr-code-container"></div>
+    </div>
+
+    <footer>
+        <p><a href="#">copyrights 2024 © delivery express. Tous droits réservés.</a></p>
+    </footer>
+    <!-- Inclure la bibliothèque qrcode.js -->
+    <script src="qrcode.min.js"></script>
+    <script>
+        // Fonction pour afficher le panier
+        function afficherPanier() {
+            var panier = JSON.parse(localStorage.getItem('panier')) || [];
+            var listePanier = document.getElementById('liste-panier');
+            var totalPanier = document.getElementById('total-panier');
+
+            // Vider la liste actuelle du panier
+            listePanier.innerHTML = '';
+
+            // Parcourir tous les articles du panier et les afficher
+            panier.forEach(function(article, index) {
+                var newItem = document.createElement('li');
+                newItem.textContent = article.nom + ' - ' + article.prix + '$';
+                
+                // Créer un bouton pour supprimer l'article
+                var deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Supprimer';
+                deleteButton.addEventListener('click', function() {
+                    supprimerArticle(index);
+                });
+
+                // Ajouter le bouton de suppression à l'élément du panier
+                newItem.appendChild(deleteButton);
+                listePanier.appendChild(newItem);
+            });
+
+            // Afficher le total du panier
+            var total = panier.reduce((acc, cur) => acc + parseFloat(cur.prix), 0);
+            totalPanier.textContent = 'Total: ' + total + '$';
+
+            // Générer le code QR
+            genererCodeQR(panier);
+        }
+
+        // Fonction pour générer le code QR
+        function genererCodeQR(panier) {
+            // Créer une chaîne représentant les détails de la commande
+            var detailsCommande = JSON.stringify(panier);
+
+            // Supprimer le code QR existant s'il y en a un
+            var qrCodeContainer = document.getElementById('qr-code-container');
+            qrCodeContainer.innerHTML = '';
+
+            // Générer le code QR avec qrcode.js
+            var qrCode = new QRCode(qrCodeContainer, {
+                text: detailsCommande,
+                width: 200,
+                height: 200,
+                colorDark : "#000000",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        }
+
+        // Fonction pour supprimer un article du panier
+        function supprimerArticle(index) {
+            var panier = JSON.parse(localStorage.getItem('panier')) || [];
+            panier.splice(index, 1); // Supprimer l'article du panier
+            localStorage.setItem('panier', JSON.stringify(panier)); // Mettre à jour le panier
+            afficherPanier(); // Réafficher le panier mis à jour
+        }
+
+        // Appeler la fonction pour afficher le panier au chargement de la page
+        afficherPanier();
+    </script>
+</body>
+</html>
